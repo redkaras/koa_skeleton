@@ -4,21 +4,15 @@
   "description": "Koa, React and Mongoose",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=development && npm run build && node --require babel-polyfill ./dist/server.js",
-    "prod": "npm run build && NODE_ENV=production && node --require babel-polyfill ./dist/server.js",
+    "start": "cross-env NODE_ENV=development && npm run build && node --require babel-polyfill ./dist/server.js",
+    "prod": "npm run build && cross-env NODE_ENV=production && node --require babel-polyfill ./dist/server.js",
     "build": "babel server.js config.js -d dist --presets es2015 && babel src -d dist/src --copy-files --presets es2015",
     "buildTest": "babel test -d dist/test --presets es2015",
-    "test": "npm run lint && NODE_ENV=test && npm run base-test",
+    "test": "npm run lint && cross-env NODE_ENV=test && npm run base-test",
     "base-test": "./node_modules/.bin/mocha --compilers js:babel-core/register --require babel-polyfill --reporter spec  --recursive ./test/",
     "lint": "eslint src app test webpack config lib server.js webpack.config.js",
     "coverage": "npm run build && npm run buildTest && npm run runCoverage",
-    "runCoverage": "./node_modules/.bin/babel-node ./node_modules/istanbul/lib/cli cover node_modules/mocha/bin/_mocha -- --compilers js:babel-core/register --bail --recursive ./dist/test/",
-    "start-windows": "SET NODE_ENV=development && npm run build && node --require babel-polyfill --harmony ./dist/server.js",
-    "prod-windows": "npm run build && SET NODE_ENV=production && node --require babel-polyfill ./dist/server.js",
-    "test-windows": "npm run lint && SET NODE_ENV=test && npm run base-test",
-    "start-windows-node4": "SET NODE_ENV=development && npm run build && node --require babel-polyfill --harmony ./dist/server.js",
-    "prod-windows-node4": "npm run build && SET NODE_ENV=production && node --require babel-polyfill ./dist/server.js",
-    "test-windows-node4": "npm run lint && SET NODE_ENV=test && npm run base-test"
+    "runCoverage": "./node_modules/.bin/babel-node ./node_modules/istanbul/lib/cli cover node_modules/mocha/bin/_mocha -- --compilers js:babel-core/register --bail --recursive ./dist/test/"
   },
   "repository": {
     "type": "git",
@@ -41,6 +35,7 @@
     "babel-register": "^6.18.0",
     "babel-runtime": "^6.18.0",
     "chai": "^3.5.0",
+    "cross-env": "^3.1.4",
     "eslint": "^3.11.1",
     "eslint-plugin-babel": "^4.0.0",
     "eslint-plugin-react": "^6.8.0",
@@ -52,7 +47,7 @@
   },
   "dependencies": {
     "babel-node-debug": "^2.0.0",
-    "bcrypt": "^1.0.0",
+    "bcrypt": "^1.0.2",
     "co": "^4.6.0",
     "co-views": "^2.1.0",
     "koa": "^1.2.4",
