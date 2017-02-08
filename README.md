@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/CVBDL/EagleEye-Platform2.svg?branch=master)](https://travis-ci.org/CVBDL/EagleEye-Platform2)
+[![Build Status](https://travis-ci.org/redkaras/koa_skeleton.svg?branch=master)](https://travis-ci.org/redkaras/koa_skeleton)
 
 # koa_skeleton
 Koa, React and Mongoose
