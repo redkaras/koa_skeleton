@@ -3,6 +3,7 @@ import Router from "koa-router";
 import authController from "../controllers/auth";
 import chartControlller from "../controllers/chart";
 import indexController from "../controllers/index";
+import demoGraphController from "../controllers/demo_graph";
 
 let secured = function *(next) {
   if (this.isAuthenticated()) {
@@ -39,10 +40,17 @@ let register = function(app, passport) {
   router.post("/signup", authController.createUser);
 
   /*
-   * auth controller
+   * chart controller
    */
   router.post("/createChart", chartControlller.createChart);
   router.get("/getChart/:id", chartControlller.getChart);
+
+  /*
+   * demo graph controller
+   */
+  router.get("/createDemoGraph", demoGraphController.createDemoGraph);
+  router.post("/createDemoGraph", demoGraphController.createDemoGraph);
+  router.get("/getDemoGraph/:id", demoGraphController.getDemoGraph);
 
   app.use(router.routes());
 };

@@ -15,7 +15,7 @@ var base = {
 var specific = {
   development: {
     app: {
-      port: 3000,
+      port: 3001,
       name: "EagleEye platform v2 - Dev",
       keys: [ "Refactoring" ],
     },
@@ -25,7 +25,7 @@ var specific = {
   },
   test: {
     app: {
-      port: 3001,
+      port: 3002,
       name: "EagleEye platform v2 - Test",
       keys: [ "Refactoring" ],
     },
@@ -36,7 +36,7 @@ var specific = {
   },
   production: {
     app: {
-      port: process.env.PORT || 3000,
+      port: process.env.PORT || 3003,
       name: "Refactoring",
       keys: [ "Refactoring" ],
     },

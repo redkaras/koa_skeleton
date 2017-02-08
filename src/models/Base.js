@@ -1,6 +1,6 @@
 import co from "co";
 import mongoose from "mongoose";
-import util from "util";
+// import util from "util";
 
 /*
  * Schema section
@@ -62,11 +62,16 @@ BaseSchema.methods.update = co.wrap(function* (attrs) {
  * @return this
  */
 BaseSchema.statics.get = co.wrap(function* (uid) {
-  let doc = yield this.findOne({ _id: uid }).exec();
-  if (doc === null) {
-    return doc;
-    // throw new Error("404");
+  let doc = null;
+  try {
+    doc = yield this.findOne({ _id: uid }).exec();
+  } catch(e) {
+    return {
+      error: e.message,
+      id: uid
+    };
   }
+
   return doc;
 });
 
