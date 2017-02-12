@@ -48,6 +48,7 @@
   "dependencies": {
     "babel-node-debug": "^2.0.0",
     "bcrypt": "^1.0.2",
+    "bluebird": "^3.4.7",
     "co": "^4.6.0",
     "co-views": "^2.1.0",
     "koa": "^1.2.4",

@@ -6,24 +6,24 @@ exports.createDemoGraph = function *() {
   let demoGraphEntity = {
     name: "test",
     nodes: [
-      { id: 0, text: "null" },
-      { id: 1, text: "foo" },
-      { id: 2, text: "bar" },
-      { id: 3, text: "hello" },
-      { id: 4, text: "world" },
-      { id: 5, text: "class" },
-      { id: 6, text: "for" },
-      { id: 7, text: "switch" },
-      { id: 8, text: "break" }
+      { uid: 0, text: "null" },
+      { uid: 1, text: "foo" },
+      { uid: 2, text: "bar" },
+      { uid: 3, text: "hello" },
+      { uid: 4, text: "world" },
+      { uid: 5, text: "class" },
+      { uid: 6, text: "for" },
+      { uid: 7, text: "switch" },
+      { uid: 8, text: "break" }
     ],
     links: [
-      { id: 0, from: 1, to: 2, text: "next" },
-      { id: 1, from: 3, to: 4, text: "next" },
-      { id: 2, from: 5, to: 6, text: "in" },
-      { id: 3, from: 5, to: 7, text: "in" },
-      { id: 4, from: 5, to: 8, text: "in" },
-      { id: 5, from: 2, to: 5, text: "close" },
-      { id: 6, from: 4, to: 5, text: "close" },
+      { uid: 0, from: 1, to: 2, text: "next" },
+      { uid: 1, from: 3, to: 4, text: "next" },
+      { uid: 2, from: 5, to: 6, text: "in" },
+      { uid: 3, from: 5, to: 7, text: "in" },
+      { uid: 4, from: 5, to: 8, text: "in" },
+      { uid: 5, from: 2, to: 5, text: "close" },
+      { uid: 6, from: 4, to: 5, text: "close" },
     ]
   };
 

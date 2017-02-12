@@ -32,7 +32,7 @@ export default function(app, config, passport) {
   }
 
   app.use(session({
-    key: "ealgeeye-platform.sid",
+    key: "graph-demo.sid",
     store: new SessionStore(),
   }));
 

@@ -1,6 +1,8 @@
 import co from "co";
 import mongoose from "mongoose";
-// import util from "util";
+import bluebird from "bluebird";
+
+mongoose.Promise = bluebird;
 
 /*
  * Schema section
@@ -65,7 +67,7 @@ BaseSchema.statics.get = co.wrap(function* (uid) {
   let doc = null;
   try {
     doc = yield this.findOne({ _id: uid }).exec();
-  } catch(e) {
+  } catch (e) {
     return {
       error: e.message,
       id: uid

@@ -4,11 +4,11 @@ import BaseSchema from "./Base";
 let DemoGraphSchema = new mongoose.Schema({
   name: { type: String, required: true },
   nodes: [ {
-    id: { type: Number, required: true },
+    uid: { type: Number, required: true },
     text: { type: String, required: true },
   } ],
   links: [ {
-    id: { type: Number, required: true },
+    uid: { type: Number, required: true },
     text: String,
     from: Number,
     to: Number

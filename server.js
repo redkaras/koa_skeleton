@@ -1,3 +1,6 @@
+import bluebird from "bluebird";
+global.Promise = bluebird;
+
 import koa from "koa";
 import passport from "koa-passport";
 

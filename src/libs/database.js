@@ -1,9 +1,12 @@
 import config from "../../config";
 import mongoose from "mongoose";
+import bluebird from "bluebird";
+
+// mongoose.Promise = bluebird;
+mongoose.Promise = Promise;
 
 class Database {
   static open() {
-    mongoose.Promise = global.Promise;
     return mongoose.connect(config.mongo.url);
   }
 
