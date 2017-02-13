@@ -42,3 +42,11 @@ exports.getDemoGraph = function *() {
     graph: graph
   };
 };
+
+exports.getGraph = function *() {
+  this.status = 200;
+  let graphs = yield service.query({});
+  this.body = {
+    graph: graphs[0] ? graphs[0] : null
+  };
+};

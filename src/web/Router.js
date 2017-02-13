@@ -51,6 +51,7 @@ let register = function(app, passport) {
   router.get("/createDemoGraph", demoGraphController.createDemoGraph);
   router.post("/createDemoGraph", demoGraphController.createDemoGraph);
   router.get("/getDemoGraph/:id", demoGraphController.getDemoGraph);
+  router.get("/getDemoGraph", demoGraphController.getGraph);
 
   app.use(router.routes());
 };
