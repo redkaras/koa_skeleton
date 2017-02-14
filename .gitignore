@@ -29,3 +29,5 @@ node_modules
 #Compiled sources
 build
 build-info.json
+
+public/test.json
