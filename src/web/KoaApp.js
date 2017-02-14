@@ -8,6 +8,7 @@ import views from "co-views";
 import compress from "koa-compress";
 import errorHandler from "koa-error";
 import bodyParser from "koa-bodyparser";
+import cors from "koa-cors";
 
 const STATIC_FILES_MAP = {};
 const SERVE_OPTIONS = { maxAge: 365 * 24 * 60 * 60 };
@@ -20,8 +21,12 @@ export default function(app, config, passport) {
     app.use(logger());
   }
 
+  app.use(cors({
+    origin: "*"
+  }));
+
   app.use(errorHandler());
-  if (config.app.env === "production") {
+  if (config.app.env !== "test") {
     // app.use(serve(path.join(config.app.root, "build", "public"), SERVE_OPTIONS, STATIC_FILES_MAP));
     app.use(serve(path.join(config.app.root, "public"), SERVE_OPTIONS, STATIC_FILES_MAP));
   } else {
