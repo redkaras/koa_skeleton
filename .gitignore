@@ -30,4 +30,5 @@ node_modules
 build
 build-info.json
 
-public/test.json
+public/*
+yarn.lock
